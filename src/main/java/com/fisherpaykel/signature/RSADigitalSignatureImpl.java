@@ -21,12 +21,10 @@ public class RSADigitalSignatureImpl extends DigitalSignatureImpl {
 			kpg.initialize(1024);
 			KeyPair keyPair = kpg.genKeyPair();
 			data = formValue.toString().getBytes("UTF8");
-			Signature signature = Signature.getInstance("MD5WithRSA");
 			
-			signature = Signature.getInstance("MD5WithRSA");
+			Signature signature =  Signature.getInstance("MD5WithRSA");
 			signature.initSign(keyPair.getPrivate());
 			signature.update(data);
-			signature.initVerify(keyPair.getPublic());
 			signature.initVerify(keyPair.getPublic());
 			signature.update(data);
 			
